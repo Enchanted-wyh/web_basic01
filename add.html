@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加联系人</title>
+</head>
+<script>
+  function check( email_address )
+  {
+    var regex = /^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/g;
+    if ( regex.test( email_address ) )
+    {
+      var alert_string = "提交成功\n\n";
+      window.alert( alert_string );
+      return true;
+    }
+    else
+    {
+      window.alert( "您输入的电子邮件地址不合法" );
+      return false;
+    }
+  }
+</script>
+<body>
+      <table border="0px">
+        <tr>
+          <td><span style="color: red; ">*</span>姓名：</td>
+          <td><input type="text"/></td>
+        </tr>
+        <tr>
+          <td><span style="color: red; ">*</span>电话：</td>
+          <td><input type="text"/></td>
+        </tr>
+        <tr>
+          <td><span style="color: red; ">*</span>邮箱：</td>
+          <td><input type="email" id="email_address"/></td>
+        </tr>
+        <tr>
+          <td><span style="color: red; ">*</span>住址：</td>
+          <td><input type="text"/></td>
+        </tr>
+        <tr>
+          <td><span style="color: red; ">*</span>QQ号：</td>
+          <td><input type="text"/></td>
+        </tr>
+      </table>
+      <input type="button" value="提交" onclick="return check(document.getElementById('email_address').value);" />
+
+</body>
+</html>
